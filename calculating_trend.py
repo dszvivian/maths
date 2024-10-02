@@ -40,11 +40,6 @@ class calculate_trend:
 
         return ((Vx,Vy),covariance)
     
-    
-
-
-
-
 
 if __name__ == "__main__":
     trend = calculate_trend(
