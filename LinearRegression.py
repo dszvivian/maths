@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 
+from dataset_loader import DatasetLoader
+
 class LinearRegression:
 
     def __init__(self) -> None:
@@ -68,13 +70,12 @@ class LinearRegression:
 
 if __name__ == "__main__":
 
-    X = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-    Y = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]
+    X,Y = DatasetLoader().csv_to_array("./datasets/Salary_dataset.csv")
 
     regressor = LinearRegression()
-    regressor.train(X,Y)
+    regressor.train(X[:-1],Y[:-1])
     regressor.plot()
-    regressor.predict(20)
+    print(f"Actual value = {Y[-1]} Predicted Value = {regressor.predict(X[-1])}")
 
 
         
