@@ -55,7 +55,7 @@ class LinearRegression:
 
         plt.scatter(self.X,self.Y)
 
-        x_new = [0,1,2,3,4,5]
+        x_new = [min(self.X), max(self.X)]
         y_new = []
 
         for item in x_new:
@@ -76,6 +76,3 @@ if __name__ == "__main__":
     regressor.train(X[:-1],Y[:-1])
     regressor.plot()
     print(f"Actual value = {Y[-1]} Predicted Value = {regressor.predict(X[-1])}")
-
-
-        
