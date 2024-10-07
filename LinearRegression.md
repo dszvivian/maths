@@ -69,7 +69,7 @@ We can see the gradient descent slope
         - We do this, untill it converges to minimal point(ie: Need to figure how many iterations (ie:epochs) you want to run it )
 
         - After all the Iteration we get m and b  
-        - Which can be used to calculate Best fit Line 
+        - Which can be used tow calculate Best fit Line 
 
 
 

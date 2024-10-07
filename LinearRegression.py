@@ -61,6 +61,9 @@ class LinearRegression:
 
         plt.plot(x_new,y_new)
         plt.show()
+        
+    def predict(self, X):
+      return (self.m * X) + self.b
 
 
 if __name__ == "__main__":
@@ -71,6 +74,7 @@ if __name__ == "__main__":
     regressor = LinearRegression()
     regressor.train(X,Y)
     regressor.plot()
+    regressor.predict(20)
 
 
         
