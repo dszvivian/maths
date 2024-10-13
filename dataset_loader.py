@@ -1,10 +1,12 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 class DatasetLoader:
 
     def __init__(self) -> list:
         self.dataset = None  
+        self.X = None
+        self.Y = None
 
 
     #todo: Check wheather given list mathches with given value n 
@@ -27,8 +29,19 @@ class DatasetLoader:
         X = self.dataset.iloc[:,0].tolist()
         Y = self.dataset.iloc[:,1].tolist()
 
-        return X, Y
+        self.X = X
+        self.Y = Y
+
+        return X, Y  
     
+    def visualize_dataset(self,title="Visualizing Dataset"):
+        plt.title(title)
+        plt.xlabel("X")
+        plt.ylabel("Y")
+
+        plt.scatter(self.X,self.Y)
+
+        plt.show()
 
 
 if __name__ == "__main__":

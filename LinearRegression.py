@@ -16,7 +16,6 @@ class LinearRegression:
               learning_rate = 0.001
               ):
         
-        #Setting the dataset for future use
         self.X = X
         self.Y = Y
 
