@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib import animation
 
 from dataset_loader import DatasetLoader
 
@@ -9,6 +10,8 @@ class LinearRegression:
         self.b = 0
         self.X = None
         self.Y = None 
+
+        self.fig , self.ax = plt.subplots()
 
     def train(self,
               X,Y,
@@ -26,6 +29,8 @@ class LinearRegression:
                 self.b,
                 learning_rate
             )
+
+            #self.plot(title=f"m={self.m}  b={self.b}")
 
     def gradient_descent(
             self,
@@ -47,8 +52,8 @@ class LinearRegression:
 
         return final_m,final_b
     
-    def plot(self):
-        plt.title("Best Fit Line")
+    def plot(self,title="Best Fit Line"):
+        plt.title(title)
         plt.xlabel("X")
         plt.ylabel("Y")
 
@@ -65,6 +70,8 @@ class LinearRegression:
         
     def predict(self, X):
       return (self.m * X) + self.b
+         
+        
 
 
 if __name__ == "__main__":
