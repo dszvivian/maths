@@ -30,7 +30,7 @@ class LinearRegression:
                 learning_rate
             )
 
-            #self.plot(title=f"m={self.m}  b={self.b}")
+            print(f"m={self.m}  b={self.b}")
 
     def gradient_descent(
             self,
