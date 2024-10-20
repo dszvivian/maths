@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from matplotlib import animation
+from Animation import Animate
 
 from dataset_loader import DatasetLoader
 
@@ -11,12 +11,13 @@ class LinearRegression:
         self.X = None
         self.Y = None 
 
-        self.fig , self.ax = plt.subplots()
+        self.animate = Animate()
 
     def train(self,
               X,Y,
-              epochs=1000,
-              learning_rate = 0.001
+              epochs=10,
+              learning_rate = 0.001,
+              animate=False
               ):
         
         self.X = X
@@ -29,6 +30,15 @@ class LinearRegression:
                 self.b,
                 learning_rate
             )
+
+            if animate:
+                self.animate.plot_each_frame(
+                    X=self.X,
+                    Y=self.Y,
+                    m=self.m,
+                    b=self.b,
+                    pause_time_between_each_frame=1
+                )
 
             print(f"m={self.m}  b={self.b}")
 
@@ -79,6 +89,6 @@ if __name__ == "__main__":
     X,Y = DatasetLoader().csv_to_array("./datasets/Salary_dataset.csv")
 
     regressor = LinearRegression()
-    regressor.train(X[:-1],Y[:-1])
+    regressor.train(X[:-1],Y[:-1],animate=True)
     regressor.plot()
     print(f"Actual value = {Y[-1]} Predicted Value = {regressor.predict(X[-1])}")
