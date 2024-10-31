@@ -6,8 +6,8 @@ from dataset_loader import DatasetLoader
 class LinearRegression:
 
     def __init__(self) -> None:
-        self.m = 0 
-        self.b = 0
+        self.m = -10 
+        self.b = -10
         self.X = None
         self.Y = None 
 
@@ -15,7 +15,7 @@ class LinearRegression:
 
     def train(self,
               X,Y,
-              epochs=10,
+              epochs=1003,
               learning_rate = 0.001,
               animate=False
               ):
@@ -37,7 +37,7 @@ class LinearRegression:
                     Y=self.Y,
                     m=self.m,
                     b=self.b,
-                    pause_time_between_each_frame=1
+                    pause_time_between_each_frame=0.1
                 )
 
             print(f"m={self.m}  b={self.b}")
