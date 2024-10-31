@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 class DatasetLoader:
 
-    def __init__(self) -> list:
+    def __init__(self,X=None,Y=None) -> list:
         self.dataset = None  
-        self.X = None
-        self.Y = None
+        self.X = X
+        self.Y = Y
 
 
     #todo: Check wheather given list mathches with given value n 
