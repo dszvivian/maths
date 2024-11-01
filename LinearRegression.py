@@ -15,7 +15,7 @@ class LinearRegression:
 
     def train(self,
               X,Y,
-              epochs=1003,
+              epochs=5000,
               learning_rate = 0.001,
               animate=False
               ):
@@ -37,7 +37,7 @@ class LinearRegression:
                     Y=self.Y,
                     m=self.m,
                     b=self.b,
-                    pause_time_between_each_frame=0.1
+                    pause_time_between_each_frame=0.001
                 )
 
             print(f"m={self.m}  b={self.b}")
