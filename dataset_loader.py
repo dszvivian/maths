@@ -36,6 +36,11 @@ class DatasetLoader:
     
     def visualize_dataset(self,title="Visualizing Dataset"):
         plt.title(title)
+
+        plt.axis('equal')
+        plt.xlim(min(self.X),max(self.X))
+        plt.ylim(min(self.Y),max(self.Y))
+
         plt.xlabel("X")
         plt.ylabel("Y")
 

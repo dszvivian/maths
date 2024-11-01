@@ -15,7 +15,7 @@ class LinearRegression:
 
     def train(self,
               X,Y,
-              epochs=5000,
+              epochs=1000,
               learning_rate = 0.001,
               animate=False
               ):
