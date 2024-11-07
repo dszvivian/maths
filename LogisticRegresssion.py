@@ -2,6 +2,8 @@ import  matplotlib.pyplot as plt
 
 from dataset_loader import DatasetLoader
 from Animation import Animate 
+from math import exp
+from sigmoid import sigmoid
 
 
 class LogisticRegression:
@@ -16,7 +18,7 @@ class LogisticRegression:
 
     def train(self,
               X,Y,
-              epochs=10,
+              epochs=100,
               learning_rate = 0.001,
               animate=False
               ):
@@ -51,7 +53,23 @@ class LogisticRegression:
             learning_rate=0.001
             ):
         
-        raise NotImplementedError("Gradient Descent Yet to Be Imeplemented") 
+        n = len(X)
+        gradient_m, gradient_b = 0,0
+
+        for i in range(n):                    
+            y_pred = sigmoid((m*X[i])+b)
+
+            gradient_m =  (1/n) * (2*X[i]*(y_pred - Y[i]))
+            gradient_b =  (1/n) * (2*(y_pred - Y[i]))
+
+        final_m  = m - gradient_m * learning_rate
+        final_b  = b - gradient_b * learning_rate
+
+        return final_m, final_b           
+
+
+
+        
     
     def plot(self,title="Best Fit Line"):
         plt.title(title)
@@ -68,9 +86,12 @@ class LogisticRegression:
 
         plt.plot(x_new,y_new)
         plt.show()
-        
+
+    def point_desicion_boundary():
+        return NotImplementedError("Point Desicion Boundary")
+
     def predict(self, X):
-      raise NotImplementedError("Predict Method Yet to be Implemented")
+      return sigmoid((self.m * X) + self.b)
 
 
 if __name__ == "__main__":
