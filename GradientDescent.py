@@ -1,26 +1,31 @@
 
 class GradientDescent:
 
-    def __init__(self,dataset):
-        self.weight = 0
-        self.bias = 0 
+    def __init__(self,
+                 dataset,
+                 learning_rate,epochs,
+                 initial_weight, initial_bias):
+        self.weight = initial_weight
+        self.bias = initial_bias
+
+        self.learning_rate = learning_rate
+        self.epochs = epochs
 
         self.X, self.Y = dataset 
         self.n = len(self.X)
 
     def derivation_of_cost_function_wrt_weight():
-        pass 
+        raise NotImplementedError("Cost Function is Not Defined") 
 
     def derivation_of_cost_function_wrt_bias():
-        pass 
+        raise NotImplementedError("Cost Function is Not Defined") 
 
     def update_weight_biases(
-        weight,gradient_weight,
-        bias,gradient_bias,
-        learning_rate =  0.0001
-    ):
-        weight =  weight - learning_rate * gradient_weight
-        bias   =  bias   - learning_rate * gradient_bias
+            self,
+            weight,gradient_weight,
+            bias,gradient_bias):
+        weight =  weight - self.learning_rate * gradient_weight
+        bias   =  bias   - self.learning_rate * gradient_bias
 
         return weight,bias
     
@@ -39,10 +44,7 @@ class GradientDescent:
             self.bias,gradient_bias
         )
         
-    def train(
-            self,
-            epochs
-    ):
+    def train(self):
         
-        for _ in range(epochs):
+        for _ in range(self.epochs):
             self.weight, self.bias = self.calculate_gradient()

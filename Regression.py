@@ -3,25 +3,28 @@ from GradientDescent import GradientDescent
 
 class Regression(GradientDescent):
 
-    def __init__(self,dataset):
-        self.X, self.Y = dataset
-        super()
+    def __init__(self,
+                dataset,
+                learning_rate = 0.001,epochs=1000,
+                initial_weight=0, initial_bias=0):
+        super(dataset,
+              learning_rate,epochs,
+              initial_weight,initial_bias)
 
     def cost_function():
-        pass
+        raise NotImplementedError("Cost Function is Not Defined")
     
     def derivation_of_cost_function_wrt_weight():
-        pass 
+        raise NotImplementedError("Cost Function is Not Defined") 
 
     def derivation_of_cost_function_wrt_weight():
-        pass     
+        raise NotImplementedError("Cost Function is Not Defined")     
 
     def train(
             self,
-            epochs = 1000,
-            weight = 0,bias = 0,
+            epochs = 1000
     ):
-        super().train()
+        super().train(epochs)
         
           
 

@@ -9,7 +9,7 @@
 - [ ] Implement Abstract classes wherever necessary  
  (ps: Python classes will work even if abstract method is not mentioned, 
  so see if it is necessary to implement abstract class/method)
- 
+
 ## Backlogs:
 
 - [ ] Add CSV path Directly into the DatasetLoader constructor 
@@ -18,3 +18,5 @@ and call csvtoarray inside init method
     - [ ] Create a Derivation Function that will automatically derivate the equation
 - [ ]  Derive Euler's Constant
 - [ ]  Derive Pi Constant
+
+## Done
