@@ -1,0 +1,1 @@
+- Gradient Descent is Used to minimize the Cost Function  
