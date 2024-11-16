@@ -11,6 +11,7 @@
 
 - [ ] Add CSV path Directly into the DatasetLoader constructor 
 and call csvtoarray inside init method 
-
+- [ ] I have done derivation manually in Regression Function
+    - [ ] Create a Derivation Function that will automatically derivate the equation
 - [ ]  Derive Euler's Constant
 - [ ]  Derive Pi Constant
