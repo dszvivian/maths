@@ -1,12 +1,15 @@
 ## Current
 
-
 - [ ] Seperate these Two Algorithms into it's Seperate Files
     - [ ] Regression
     - [ ] Gradient descent 
 - [ ] Call these two Algorithms into Linear and Logistic Regression files
 - [ ] Cleanup Linear Regression and Logistic Regression
 
+- [ ] Implement Abstract classes wherever necessary  
+ (ps: Python classes will work even if abstract method is not mentioned, 
+ so see if it is necessary to implement abstract class/method)
+ 
 ## Backlogs:
 
 - [ ] Add CSV path Directly into the DatasetLoader constructor 
