@@ -1,16 +1,7 @@
 from math import log
 import matplotlib.pyplot as plt
 
-
-
-
-
-
-
-
-
-
-
+# Plotting graph to visualize, Logarithm
 
 
 if __name__ == "__main__":

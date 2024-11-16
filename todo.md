@@ -1,7 +1,6 @@
 ## Current
 
-- [x] Visualize Logarithm using matplotlib
-
+- [ ] Cleanup Linear Regression and Logistic Regression
 ## Backlogs:
 
 - [ ] Add CSV path Directly into the DatasetLoader constructor 

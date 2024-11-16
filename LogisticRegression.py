@@ -3,7 +3,7 @@ import  matplotlib.pyplot as plt
 from dataset_loader import DatasetLoader
 from Animation import Animate 
 from math import exp
-from sigmoid import sigmoid
+from activation_functions import sigmoid
 
 
 class LogisticRegression:
@@ -99,5 +99,5 @@ if __name__ == "__main__":
     obese_not_obese_dataset.csv_to_array(path="./datasets/obesity-classification-dataset.csv")
 
     regressor = LogisticRegression()
-    regressor.train(obese_not_obese_dataset.X,obese_not_obese_dataset.Y)
-    print(f"Actual value = {obese_not_obese_dataset.Y[-1]} Predicted Value = {regressor.predict(obese_not_obese_dataset.X[-1])}")
+    regressor.train(obese_not_obese_dataset.X[1:],obese_not_obese_dataset.Y[1:],animate=False)
+    print(f"Actual value = {obese_not_obese_dataset.Y[0]} Predicted Value = {regressor.predict(obese_not_obese_dataset.X[0])}")

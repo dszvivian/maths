@@ -6,19 +6,7 @@ class DatasetLoader:
     def __init__(self,X=None,Y=None) -> list:
         self.dataset = None  
         self.X = X
-        self.Y = Y
-
-
-    #todo: Check wheather given list mathches with given value n 
-    def validate_dataset(
-            self,
-            n=2
-            ):
-        """
-        validates if it's a 2d array or not
-        """
-        return True
-    
+        self.Y = Y    
 
     def csv_to_array(self,path):
         """"
@@ -50,9 +38,7 @@ class DatasetLoader:
 
 
 if __name__ == "__main__":
-    salary_dataset = DatasetLoader()
-
-    print(salary_dataset.csv_to_array("./datasets/Salary_dataset.csv"))
+    pass
 
 
         
