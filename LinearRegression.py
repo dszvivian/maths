@@ -34,7 +34,6 @@ class LinearRegression(Regression):
 
 
 if __name__ == "__main__":
-
     dataset = DatasetLoader().csv_to_array("./datasets/Salary_dataset.csv")
     regressor = LinearRegression(dataset)
     regressor.train()
