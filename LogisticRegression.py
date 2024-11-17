@@ -40,5 +40,5 @@ class LogisticRegression(Regression):
 
 if __name__ == "__main__":
     dataset = DatasetLoader().csv_to_array(path="./datasets/obesity-classification-dataset.csv")
-    regressor = LogisticRegression(dataset)
-    regressor.train()
+    regressor = LogisticRegression(dataset,epochs=10)
+    regressor.train(animate=True)
