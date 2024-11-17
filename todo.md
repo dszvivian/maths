@@ -6,6 +6,7 @@
 - [ ] Call these two Algorithms into Linear and Logistic Regression files
 - [ ] Cleanup Linear Regression and Logistic Regression
 
+- [ ]  Figure out where to add DatasetLoader class
 - [ ] Implement Abstract classes wherever necessary  
  (ps: Python classes will work even if abstract method is not mentioned, 
  so see if it is necessary to implement abstract class/method)

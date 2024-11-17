@@ -1,3 +1,4 @@
+from Animation import Animate
 
 class GradientDescent:
 
@@ -14,10 +15,12 @@ class GradientDescent:
         self.X, self.Y = dataset 
         self.n = len(self.X)
 
-    def derivation_of_cost_function_wrt_weight():
+        self.animate = Animate()
+
+    def derivation_of_cost_function_wrt_weight(n,X,Y,weight,bias):
         raise NotImplementedError("Cost Function is Not Defined") 
 
-    def derivation_of_cost_function_wrt_bias():
+    def derivation_of_cost_function_wrt_bias(n,X,Y,weight,bias):
         raise NotImplementedError("Cost Function is Not Defined") 
 
     def update_weight_biases(
@@ -29,22 +32,38 @@ class GradientDescent:
 
         return weight,bias
     
-    def calculate_gradient(
-            self
-    ):        
+    def calculate_gradient(self):        
         gradient_weight = 0
         gradient_bias = 0  
 
-        for _ in range(self.n):
-            gradient_weight += self.derivation_of_cost_function_wrt_weight()
-            gradient_bias += self.derivation_of_cost_function_wrt_bias()
+        for i in range(self.n):
+            gradient_weight += self.derivation_of_cost_function_wrt_weight(
+                self.n,
+                self.X[i],
+                self.Y[i],
+                self.weight,
+                self.bias
+            )
+            gradient_bias += self.derivation_of_cost_function_wrt_bias(
+                self.n,
+                self.X[i],
+                self.Y[i],
+                self.weight,
+                self.bias
+            )
 
         return self.update_weight_biases(
             self.weight,gradient_weight,
             self.bias,gradient_bias
         )
         
-    def train(self):
+    def train(self,animate=False):
         
         for _ in range(self.epochs):
             self.weight, self.bias = self.calculate_gradient()
+
+            if animate:
+                self.animate.plot_each_frame(
+                    self.X,self.Y,
+                    self.weight,self.bias
+                )
