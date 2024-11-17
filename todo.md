@@ -1,12 +1,6 @@
 ## Current
 
-- [ ] Seperate these Two Algorithms into it's Seperate Files
-    - [ ] Regression
-    - [ ] Gradient descent 
-- [ ] Call these two Algorithms into Linear and Logistic Regression files
-- [ ] Cleanup Linear Regression and Logistic Regression
-
-- [ ]  Figure out where to add DatasetLoader class
+- [ ] Write indetail explanation of Logistic Regression
 - [ ] Implement Abstract classes wherever necessary  
  (ps: Python classes will work even if abstract method is not mentioned, 
  so see if it is necessary to implement abstract class/method)
@@ -21,3 +15,11 @@ and call csvtoarray inside init method
 - [ ]  Derive Pi Constant
 
 ## Done
+
+- [x] Seperate these Two Algorithms into it's Seperate Files
+    - [x] Regression
+    - [x] Gradient descent 
+- [x] Call these two Algorithms into Linear and Logistic Regression files
+- [x] Cleanup Linear Regression and Logistic Regression
+
+- [x]  Figure out where to add DatasetLoader class
